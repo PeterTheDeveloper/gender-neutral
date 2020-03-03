@@ -58,14 +58,15 @@ function getLocation() {
             console.log("General Position:", position);
             const long = position.coords.longitude;
             const lat = position.coords.latitude;
-            return {lat, long}
+            return {lat: lat, long: long}
         })
     }
 }
 
 function getBathrooms() {
     ourLocation = getLocation()
-    const url = `https://www.refugerestrooms.org/api/v1/restrooms/by_location?per_page=10&unisex=true&lat=${ourLocation[lat]}&lng=${ourLocation[long]}`;
+    
+    const url = `https://www.refugerestrooms.org/api/v1/restrooms/by_location?per_page=10&unisex=true&lat=${ourLocation.lat}&lng=${ourLocation.long}`;
 
     fetch(url)
         .then(res => res.json())
