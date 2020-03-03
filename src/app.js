@@ -47,3 +47,21 @@ console.log("JavaScript is Connected!");
   
   
 //   Use Bathroom API Below here;
+
+//Get Users Location 
+if (navigator.geolocation) {
+		navigator.geolocation.getCurrentPosition(position => {
+			console.log('My General Position:', position);
+			const long = position.coords.longitude;
+			const lat = position.coords.latitude;
+			
+			
+			getBathrooms(lat, long);
+		});
+};
+
+function getBathrooms(lat, long){
+    const url = `https://www.refugerestrooms.org/api/v1/restrooms/by_location?per_page=10&unisex=true&lat=${lat}&lng=${long}`;
+    
+    return fetch(url).then(res=>res.json());
+}
