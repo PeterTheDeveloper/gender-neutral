@@ -107,7 +107,9 @@ function getBathrooms(lat, long){
                   unisex: bathroom.unisex,
                   description: bathroom.directions,
                   comment: bathroom.comment
-            }.addEventListener("click");
+            }.addEventListener("click", function() {
+                
+            });
     }))
 );
 }
@@ -268,21 +270,29 @@ function placeMarkers() {
     });
 }
 
+function reverseGeocoding() {
+    const locationiqApiKey = "48447f262ef7c7";
+    const lat = 41.85, long = -87.65;
+    
+    // const url = `https://us1.locationiq.com/v1/search.php?key=${locationiqApiKey}&q=Empire%20State%20Building&format=json`
+    
+    fetch(`https://us1.locationiq.com/v1/reverse.php?key=${locationiqApiKey}&lat=${lat}&lon=${long}&format=json`)
+    .then(response => response.json())
+    .then(json => console.log(json.display_name))
+    
+}
 
     /*  Function Delcarations  -->  News + Relevant Info  */
 
 
 /* Reverse Geocoding API */
 
-// const locationiqApiKey = "48447f262ef7c7";
-// const lat = 41.85, long = -87.65;
-
-// // const url = `https://us1.locationiq.com/v1/search.php?key=${locationiqApiKey}&q=Empire%20State%20Building&format=json`
-
-// fetch(`https://us1.locationiq.com/v1/reverse.php?key=${locationiqApiKey}&lat=${lat}&lon=${long}&format=json`)
-// .then(response => response.json())
-// .then(json => console.log(json.display_name))
 
 
     
     
+
+
+
+
+// 
