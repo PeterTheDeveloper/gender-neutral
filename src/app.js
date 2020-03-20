@@ -1,20 +1,10 @@
-/*----- constants -----*/
-/*
-// Steps goign forward.
-1. create a new layer above map
-    1.1 layer contains the following
-        1.1.1 A section that LOOKS like a button but will just tell the current location reverse geolocated. fake button is at the top
-            1.1.1.2 use ourMap.panTo(marker.getPosition());  so when its click it'll go back to the center. this is niche
-        1.1.2 A section to append Transit App like cards to part of the page(pick a corner and still with that), when clicked it gives directions to the pin.
-    1.2 this replaces start end tab
-*/
+
 /*  DOM Elements */
 const startTab = document.getElementById('start') // Delete from global space eventually
 const endTab = document.getElementById('end')
 
 
 /*------ Classes ------*/
-
 
 class Session {
     constructor() {
